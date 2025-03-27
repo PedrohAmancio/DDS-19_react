@@ -1,0 +1,23 @@
+.navbar{
+    background-color: hsl(231, 69%, 47%);
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+.link{
+    color: wheat;
+    text-decoration: none;
+    margin: 0px 10px;
+}
+.link:hover{
+    text-decoration: underline;
+}
+.active{
+    background-color: orange;
+}

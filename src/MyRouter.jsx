@@ -6,8 +6,8 @@ import Login from './pages/Login.jsx';
 import Home from './pages/Home.jsx';
 import Cadastro from './pages/Cadastro.jsx';
 import Contato from './pages/Contato.jsx';
-import sobre from './pages/sobre.jsx';
-
+import Sobre from './pages/Sobre.jsx';
+import InfoCard from './Componentes/InforCard.jsx';
 const router = createBrowserRouter([
     {
         path:"/", //Rota 
@@ -29,12 +29,17 @@ const router = createBrowserRouter([
             },
             {
                 path:"/sobre",
-                element:<sobre/>,
+                element:<Sobre/>,
          },
          {
             path:"/Contato",
             element:<Contato/>,
      },
+     {
+        path:"/informacao/:id",
+        element:<h1><InfoCard/></h1>,
+     }
+
 
 
     ],

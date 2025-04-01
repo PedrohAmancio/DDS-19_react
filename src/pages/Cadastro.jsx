@@ -1,8 +1,11 @@
 import React from 'react'
-
+import Forms from '../Componentes/Forms.jsx'
 const Cadastro = () => {
   return (
-    <div>Cadastro</div>
+    <div>
+     <h1>Cdastro</h1>
+     <Forms/> 
+    </div>
   )
 }
 

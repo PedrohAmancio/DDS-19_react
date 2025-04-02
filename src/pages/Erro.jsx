@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Erro = () => {
   return (
     <div>Erro
-      <link to = "home">Pagina  inicial</link>
+      <Link to = "home">Pagina  inicial</Link>
     </div>
   )
 }

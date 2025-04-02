@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styles from './Forms.module.css' // importando o css do componente
-const Forms = () => {
-  const [nome, setNome] = useState()
-  const [email, setEmail] = useState()
-  const [senha, setSenha] = useState()
+const Forms = (props) => {
+  const [nome, setNome] = useState(props ? props.nome: ""); // se props for verdadeiro, setNome recebe o valor de props.nome, caso contrario, setNome recebe uma string vazia
+  const [email, setEmail] = useState(props ? props.email: "") // se props for verdadeiro, setEmail recebe o valor de props.email, caso contrario, setEmail recebe uma string vazia
+  const [senha, setSenha] = useState(props ? props.senha: "")// se props for verdadeiro, setSenha recebe o valor de props.senha, caso contrario, setSenha recebe uma string vazia
     // criando um state para o nome, email e senha
     const handleSubmit = (e) => {
         e.preventDefault(); // previne o comportamento padrão do form, que é recarregar a pagina
@@ -22,16 +22,20 @@ const Forms = () => {
         <form className={styles.formulario} onSubmit={handleSubmit}>
             {/* Label froa do input, com htmlFor */}
             <label htmlFor="nome"> Nome :</label>
-            <input type="text" id="nome" placeholder='Digite seu nome...' onChange={handleName}/>
+            <input type="text" id="nome" placeholder='Digite seu nome...' onChange={handleName}
+            value={nome} // aqui estou setando o valor do input com o valor do state
+            // o value é o que vai aparecer no input, e o onChange é o que vai mudar o valor do state
+            />
 
             {/* Label envolvendo o input */}
             <label htmlFor="">
                 <span>email</span>
-                <input type="email" name ="email" placeholder='Digite seu email...' onChange={(e) => {setEmail(e.target.value)}} />
+                <input type="email" name ="email" placeholder='Digite seu email...' onChange={(e) => {setEmail(e.target.value)}}
+                value={email} />
             </label>
             <label htmlFor="senha">
                 <span>Senha</span>
-                <input type="password" name="senha" placeholder='Digite sua senha...' onChange={(e) => {setSenha(e.target.value)}}/>
+                <input type="password" name="senha" placeholder='Digite sua senha...' onChange={(e) => {setSenha(e.target.value)}} value={senha}/>
             </label>
             <input type="submit" value="Enviar" style={{ backgroundColor: "blue", color: "white"}}/>
         </form>

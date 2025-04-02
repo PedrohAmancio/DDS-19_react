@@ -15,3 +15,8 @@ input{
    border: 2px solid #ccc;
     padding: 5px;
 }
+.errors{
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
